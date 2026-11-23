@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samia Riaz · Data, AI & Geospatial Analyst</title>
+<meta name="description" content="Samia Riaz: data and AI analyst who turns satellite, field and location data into models, dashboards and web tools that support decisions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: confident, practical, recruiter-first: what she can do for you, proven by live work
+   IDEA: a field survey map sheet: contour lines, sample points, a legend of skills
+   PICTURE: hero contour map drawn in SVG with sampled points and a live "analysis" scan line
+   COLOUR and TYPE: deep forest ground, lichen pale support, coral hotspot accent; Sora + Inter
+   LAYOUT: full-bleed hero band, then light content bands; project cards that open live demos inline */
+:root{color-scheme:light dark;
+--bg:light-dark(#fbfcf8,#0c1512);--ink:light-dark(#14211c,#e7efe9);--mute:light-dark(#4d5e57,#a9bcb3);
+--deep:#0f3d2e;--deep2:#0b2f23;--lichen:light-dark(#e7f0dc,#16261f);--line:light-dark(#d5e0d2,#25392f);
+--accent:#ff6b4a;--card:light-dark(#ffffff,#111d18);--chip:light-dark(#f1f6ea,#1b2c24)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,3.4vw,40px)}h3{font-size:19px;line-height:1.25}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(40px,6vw,84px) max(5vw,16px)}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--deep) 94%,transparent);backdrop-filter:blur(8px);color:#fff}
+nav .wrap{display:flex;align-items:center;gap:18px;padding:12px max(5vw,16px);flex-wrap:wrap}
+nav .me{font-family:Sora,Inter,sans-serif;font-weight:700;margin-right:auto;text-decoration:none}
+nav .links{display:flex;gap:4px;flex-wrap:wrap}
+nav .links a{text-decoration:none;font-size:14px;padding:8px 10px;border-radius:8px;opacity:.9}
+nav .links a:hover,nav .links a:focus-visible{background:rgba(255,255,255,.12);opacity:1}
+.hero{background:var(--deep);color:#fff;padding-top:clamp(32px,5vw,64px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.hero .wrap.full{display:block}
+.hero h1{font-size:clamp(36px,5vw,56px)}
+.hero p.lede{font-size:18px;color:#d6e6dc;max-width:58ch;margin:18px 0 0}
+.roles{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.roles li{border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:6px 13px;font-size:14px;color:#eef6f0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:10px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font:600 15px Inter,sans-serif}
+.btn.primary{background:var(--accent);color:#1a0b06}
+.btn.ghost{background:transparent;color:inherit;border:1px solid currentColor}
+.btn:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.map{position:relative;aspect-ratio:1/0.82;border-radius:18px;overflow:hidden;background:var(--deep2);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.map svg{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+.legend{position:absolute;left:14px;bottom:14px;background:rgba(7,28,21,.82);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:10px 12px;font-size:13px;color:#e6f2ea;display:grid;gap:4px}
+.legend span{display:flex;align-items:center;gap:8px}.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.14);margin-top:clamp(32px,5vw,56px);border-top:1px solid rgba(255,255,255,.14)}
+.stats div{background:var(--deep);padding:18px 4px 22px}
+.stats b{display:block;font:700 clamp(26px,3vw,34px) Sora,sans-serif}
+.stats span{color:#c4d8cc;font-size:14px}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(24px,4vw,64px)}
+.intro p{color:var(--mute);margin:14px 0 0;font-size:17px}
+.offer{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.offer li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.offer b{display:block;font-family:Sora,Inter,sans-serif;font-size:16px;margin-bottom:2px}
+.offer span{color:var(--mute);font-size:15px}
+.alt{background:var(--lichen)}
+.sub{color:var(--mute);max-width:68ch;margin:12px 0 0;font-size:17px}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+.skill{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.skill h3{margin-bottom:6px}
+.skill p{color:var(--mute);font-size:15px;margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{background:var(--chip);border-radius:7px;padding:3px 9px;font-size:13px}
+.projects{display:grid;gap:22px;margin-top:32px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.proj .top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;padding:24px}
+.tag{font-size:13px;color:var(--mute)}
+.proj h3{font-size:22px;margin:4px 0 10px}
+.proj .problem{margin:0;color:var(--mute)}
+.proj dl{margin:0;display:grid;gap:12px}
+.proj dt{font-weight:600;font-size:14px}
+.proj dd{margin:2px 0 0;font-size:15px;color:var(--mute)}
+.proj .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.proj .btn{padding:8px 14px;min-height:44px;font-size:14px}
+.proj .btn.ghost{color:var(--ink)}
+.embed{border-top:1px solid var(--line);background:var(--chip);height:0;overflow:hidden;transition:height .35s ease}
+.embed.open{height:min(78vh,680px)}
+.embed iframe{width:100%;height:100%;border:0;display:block}
+.small{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.small .proj{padding:20px}
+.small h3{font-size:18px;margin:4px 0 8px}
+.small p{margin:0 0 10px;color:var(--mute);font-size:15px}
+.small .contrib{font-size:14px;color:var(--ink);border-top:1px solid var(--line);padding-top:10px;margin:0}
+.timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+.item{border-left:3px solid var(--accent);padding:4px 0 4px 16px}
+.item h3{font-size:17px}.item .when{font-size:13px;color:var(--mute)}
+.item p{margin:6px 0 0;font-size:15px;color:var(--mute)}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.list{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.list li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;border-bottom:1px solid var(--line);padding-bottom:8px;font-size:15px}
+.list li span:last-child{color:var(--mute);white-space:nowrap}
+footer{background:var(--deep);color:#fff}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end}
+footer p{color:#cfe2d6;max-width:56ch}
+.contact{display:grid;gap:10px}
+.contact a,.contact div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.2);padding:10px 0;text-decoration:none}
+.contact span:last-child{color:#cfe2d6;overflow-wrap:anywhere;text-align:right}
+@media(max-width:900px){.hero .wrap,.intro,.proj .top,.cols,footer .wrap{grid-template-columns:minmax(0,1fr)}.skills,.small{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.skills,.small,.timeline{grid-template-columns:minmax(0,1fr)}nav .links{display:none}.embed.open{height:70vh}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.embed{transition:none}#scan{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="me" href="#top">Samia Riaz</a><div class="links"><a href="#value">What I bring</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></div></nav>
+
+<header class="hero band" id="top"><div class="wrap">
+ <div>
+  <h1>I turn messy real-world data into models, maps and tools people can act on.</h1>
+  <p class="lede">Data and AI analyst with a PhD in progress at UT Dallas. I build automated data pipelines, machine-learning models, interactive dashboards and web apps, grounded in a decade of scientific training and experience leading teams, classrooms and community programs.</p>
+  <ul class="roles"><li>Data analysis &amp; science</li><li>Machine learning &amp; AI</li><li>Geospatial &amp; remote sensing</li><li>Dashboards &amp; web apps</li><li>Research &amp; program leadership</li></ul>
+  <div class="cta"><a class="btn primary" href="#work">See live projects</a><a class="btn ghost" href="#contact">Get in touch</a></div>
+ </div>
+ <div class="map" aria-label="Illustrated survey map with sampled data points">
+  <svg id="hero" viewBox="0 0 500 410" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true"></svg>
+  <div class="legend"><span><i style="background:#ff6b4a"></i>Hotspot found</span><span><i style="background:#c9f27a"></i>Field sample</span><span><i style="background:#7fd1ff"></i>Sensor reading</span></div>
+ </div>
+</div>
+<div class="wrap full"><div class="stats">
+ <div><b>15+</b><span>end-to-end data projects</span></div>
+ <div><b>6,837</b><span>sites scored in one live web app</span></div>
+ <div><b>80+</b><span>students taught in lab courses</span></div>
+ <div><b>20+</b><span>web maps, apps &amp; dashboards published</span></div>
+</div></div>
+</header>
+
+<section class="band" id="value"><div class="wrap intro">
+ <div>
+  <h2>What I can contribute to your team</h2>
+  <p>I am most useful where data is large, messy or spatial and decisions still have to be made. I scope the question, build the pipeline, test the model honestly, and deliver something non-specialists can use.</p>
+ </div>
+ <ul class="offer">
+  <li><b>Automate the data work</b><span>Repeatable Python and cloud pipelines that pull, clean, verify and summarise data on their own, with built-in accuracy checks.</span></li>
+  <li><b>Build models you can trust</b><span>Machine learning, statistics and validation designed to avoid overconfident results, with clear limits stated up front.</span></li>
+  <li><b>Make results usable</b><span>Dashboards, interactive web apps and story-driven reports that let managers and the public explore answers themselves.</span></li>
+  <li><b>Lead people and partners</b><span>Teaching, mentoring, running a student organization and working with public agencies on real deliverables.</span></li>
+ </ul>
+</div></section>
+
+<section class="band alt" id="skills"><div class="wrap">
+ <h2>Skills and methods</h2>
+ <p class="sub">Transferable to data science, analytics, research, environmental and public-sector roles, not just GIS.</p>
+ <div class="skills" id="skillGrid"></div>
+</div></section>
+
+<section class="band" id="work"><div class="wrap">
+ <h2>Live work you can open right here</h2>
+ <p class="sub">Each project lists the methods I applied and what that means for your team. Open a live version inside this page, or in a new tab.</p>
+ <div class="projects" id="featured"></div>
+ <h2 style="margin-top:56px;font-size:clamp(24px,2.8vw,32px)">More projects</h2>
+ <div class="small" id="more"></div>
+</div></section>
+
+<section class="band alt" id="experience"><div class="wrap">
+ <h2>Experience</h2>
+ <div class="timeline" id="timeline"></div>
+</div></section>
+
+<section class="band"><div class="wrap cols">
+ <div><h2 style="font-size:clamp(24px,2.8vw,32px)">Education</h2><ul class="list" id="edu"></ul></div>
+ <div><h2 style="font-size:clamp(24px,2.8vw,32px)">Certifications</h2><ul class="list" id="certs"></ul></div>
+</div></section>
+
+<footer class="band" id="contact"><div class="wrap">
+ <div><h2>Let’s talk about what your data needs.</h2><p>Open to data analyst, data scientist, research, environmental analytics, geospatial and program roles, and to internships and collaborations.</p></div>
+ <div class="contact">
+  <div><span>Email</span><span>samiariaz8046@gmail.com</span></div>
+  <a href="https://www.linkedin.com/in/samia-riaz-3556902a1"><span>LinkedIn</span><span>linkedin.com/in/samia-riaz-3556902a1 ↗</span></a>
+  <div><span>Based in</span><span>Dallas, Texas</span></div>
+ </div>
+</div></footer>
+
+<script>
+{
+const skills=[
+ ["Data analysis & statistics","Cleaning, exploring and modelling data to answer a clear question.",["Python (pandas, NumPy)","R","Regression & GLM","PCA","Spatial statistics","Sampling design","Hypothesis testing"]],
+ ["Machine learning & AI","Building and honestly validating predictive models.",["scikit-learn","Random Forest","K-means clustering","Foundation-model embeddings","Spatial cross-validation","GeoAI","Generative AI tools"]],
+ ["Data engineering & automation","Pipelines that run end to end without manual steps.",["Automated workflows","Google Earth Engine","APIs & feature services","GTFS transit data","Data QA & accuracy metrics","Batch processing"]],
+ ["Dashboards & web development","Turning analysis into tools people actually use.",["JavaScript","HTML & CSS","ArcGIS Maps SDK","ArcGIS Dashboards","Experience Builder","StoryMaps","GitHub Pages"]],
+ ["Geospatial & remote sensing","Satellite, drone, LiDAR and map data at any scale.",["ArcGIS Pro","QGIS","Sentinel, Landsat, MODIS/VIIRS","SAR","Drone mapping","LiDAR & CloudCompare","Change detection"]],
+ ["Science, field & lab","Designing data collection and running experiments.",["Survey123 & Field Maps","Field survey design","PCR & DNA/RNA extraction","Flow cytometry","Lab protocols","Plant pathology"]],
+ ["Research & communication","Synthesising evidence and explaining it clearly.",["Systematic reviews","Scientific writing","Conference presentations","Data storytelling","Technical documentation"]],
+ ["Leadership & teaching","Leading people, programs and partnerships.",["Student organization president","Lab instruction (80+ students)","Mentoring","Curriculum design","Event planning","Stakeholder collaboration"]],
+ ["Tools","Everyday software and platforms.",["Python","R","JavaScript","Google Earth Engine","ArcGIS Online","Jupyter & Colab","Microsoft Office"]]
+];
+document.getElementById('skillGrid').innerHTML=skills.map(([t,d,c])=>`<div class="skill"><h3>${t}</h3><p>${d}</p><div class="chips">${c.map(x=>`<span>${x}</span>`).join('')}</div></div>`).join('');
+
+const featured=[
+ {tag:"Web app · urban heat & equity",title:"ShadeGap DFW: bus-stop heat risk planner",
+  problem:"Transit riders wait in extreme Texas heat, and cities have limited money for shade. Where should a new tree or shelter go?",
+  methods:"Designed a 0–100 risk index combining satellite surface temperature, tree cover and the CDC Social Vulnerability Index for 6,837 bus stops; built an interactive what-if planner in JavaScript (ArcGIS Maps SDK) and deployed it on GitHub Pages.",
+  value:"I can turn several public datasets into a single decision score and ship it as a working web tool for non-technical users.",
+  url:"https://samiariaz8046-dotcom.github.io/shadegap-dfw/"},
+ {tag:"AI + GIS · public-agency partnership",title:"Lester Lorch Park trail planning with Dallas County Parks",
+  problem:"An 82-acre county preserve had no formal trails. Which routes balance visitor access with fragile forest, prairie and wetlands?",
+  methods:"Stratified field sampling with K-means and spatial optimisation; AlphaEarth AI embeddings to test how representative the field data was; LiDAR terrain and drainage modelling; least-cost routing for a 2.48 km trail network. Team project with Dallas County Parks and Open Space.",
+  value:"I work with real stakeholders, choose methods the evidence can support, and say plainly where more data is needed.",
+  url:"https://storymaps.arcgis.com/stories/1703a1eccb064ea6bed72546621215fc"},
+ {tag:"Dashboard · operations",title:"311 incident dashboard",
+  problem:"Managers need to see where and when city service requests pile up without reading tables.",
+  methods:"Published incident data as a hosted layer and built an operations dashboard with a live map, gauge, trend chart, list and date and category filters.",
+  value:"I can build monitoring dashboards that let teams filter and act on operational data in seconds.",
+  url:"https://www.arcgis.com/apps/dashboards/fd9ac25e6af64bf4986bada2c6ebd32e"},
+ {tag:"Data storytelling · hazards",title:"Texas tornadoes 2020–2025",
+  problem:"Where do tornadoes hit Texas, and how do strength, size and damage differ across the state?",
+  methods:"Cleaned 711 NOAA Storm Events records, published them as a hosted layer, and built 2D and 3D maps with multivariate symbols inside an interactive StoryMap.",
+  value:"I can make complex risk data understandable for the public, emergency planners and leadership.",
+  url:"https://storymaps.arcgis.com/stories/ea1222ef070741fc9c986b1ebfd63120"}
+];
+document.getElementById('featured').innerHTML=featured.map((p,i)=>`<article class="proj">
+ <div class="top">
+  <div><div class="tag">${p.tag}</div><h3>${p.title}</h3><p class="problem">${p.problem}</p>
+   <div class="actions"><button class="btn primary" data-i="${i}" aria-expanded="false" aria-controls="emb${i}">Open live demo here</button><a class="btn ghost" href="${p.url}" target="_blank" rel="noopener">Open in new tab ↗</a></div></div>
+  <dl><div><dt>Skills and methods applied</dt><dd>${p.methods}</dd></div><div><dt>What this means for your team</dt><dd>${p.value}</dd></div></dl>
+ </div>
+ <div class="embed" id="emb${i}"></div>
+</article>`).join('');
+document.getElementById('featured').addEventListener('click',e=>{
+ const b=e.target.closest('button[data-i]');if(!b)return;
+ const p=featured[b.dataset.i],box=document.getElementById('emb'+b.dataset.i);
+ const open=!box.classList.contains('open');
+ if(open&&!box.firstChild)box.innerHTML=`<iframe src="${p.url}" title="${p.title} live demo" loading="lazy" allowfullscreen></iframe>`;
+ box.classList.toggle('open',open);b.setAttribute('aria-expanded',open);b.textContent=open?'Close live demo':'Open live demo here';
+});
+
+const more=[
+ ["Automation · AI · satellite data","Automated wildfire detection and verification","Python and Google Earth Engine pipeline that clusters satellite fire alerts into events, verifies each with Sentinel-2 imagery and scores sensor accuracy (IoU).","Hands-off pipelines with built-in quality checks."],
+ ["Forecasting risk","Invasive species spread and risk model","Weighted-overlay suitability and cost-distance spread modelling from 402 field records, run under normal, flood and managed scenarios.","Scenario modelling that tells managers where to act first."],
+ ["Python tool · public health","Heat, green space and air quality explorer, Lahore","Interactive Python tool linking vegetation loss, land surface temperature, NO₂ and urban growth for 2019–2024.","Self-serve analysis tools built for decision-makers."],
+ ["Drone & 3D data","Hidden vegetation stress from drone data","Orthomosaics, surface and terrain models, and a new structural–spectral index to spot stress that greenness alone misses.","Comfort with new sensors and creating custom metrics."],
+ ["Statistics · dimension reduction","Flood damage to crops, Punjab","Four vegetation indices combined with PCA to classify crop health after the 2025 floods.","Reducing many noisy signals to one clear indicator."],
+ ["Research synthesis · AI","Systematic review: AI and human landscape perception","Screened 254 studies and synthesised 32 into a new framework on how AI predicts and simulates human judgement.","Rigorous evidence reviews and critical evaluation of AI."],
+ ["Data collection","Environmental issue reporting app","Survey123 form with location, photos and categories feeding a live map of dumping, pollution and vegetation damage at White Rock Lake.","Designing data collection that produces clean, usable data."],
+ ["Web development","HTML, CSS and JavaScript mapping labs","Hand-coded pages and web maps with search, attribute, spatial and buffer queries using ArcGIS Maps SDK 5.1.","Front-end coding, not just template configuration."],
+ ["3D data","Terrestrial LiDAR to 3D model","Registered laser scans, cleaned point clouds and built and repaired 3D meshes in CloudCompare.","Handling large 3D datasets end to end."]
+];
+document.getElementById('more').innerHTML=more.map(([t,h,p,c])=>`<article class="proj"><div class="tag">${t}</div><h3>${h}</h3><p>${p}</p><p class="contrib"><b>You get:</b> ${c}</p></article>`).join('');
+
+const jobs=[
+ ["President, GIS Student Organization","UT Dallas · Aug 2025 – present","Lead a student organization: industry sessions with professionals, a field visit to Dallas County Homeland Security & Emergency Management, the GIS Day map competition, and socials that build a supportive community."],
+ ["Graduate Teaching Assistant, Digital Earth","UT Dallas · Aug 2026 – present","Run hands-on GIS labs, grade and give feedback, coordinate with faculty."],
+ ["PhD Researcher, GIS & Remote Sensing","UT Dallas · Aug 2025 – present","Research on predicting vegetation disease with satellite, drone and LiDAR data and machine learning."],
+ ["Student Assistant, Comet Support Hub","UT Dallas · Jun – Aug 2026","Triaged and resolved student support tickets, routed cases to campus offices, supported outreach."],
+ ["Graduate Student Assistant, Enrollment Management","UT Dallas · Sep 2025 – May 2026","Evaluated applications and verified academic records for accuracy."],
+ ["Teaching & Research Assistant, Biology","Clark University · Aug 2023 – May 2025","Taught four lab sections (PCR, DNA extraction, gel electrophoresis); ran DNA/RNA and flow-cytometry research; mentored undergraduates; DEI student advocate."],
+ ["Education Coordinator","Western Australian Education Network · 2022 – 2023","Launched an Australian education initiative in Pakistan and built a curriculum framework adopted by multiple institutions."],
+ ["Research & Development Assistant","Premier Group of Colleges · 2018 – 2020","Ran international partnerships, an exchange program with SolBridge (South Korea) and a project with the Chinese Embassy."]
+];
+document.getElementById('timeline').innerHTML=jobs.map(([t,w,p])=>`<div class="item"><h3>${t}</h3><div class="when">${w}</div><p>${p}</p></div>`).join('');
+
+const edu=[["PhD, Geospatial Information Sciences, UT Dallas","2025 – 2030 (expected)"],["M.Phil. Botany (plant virology), Minhaj University Lahore","2022"],["B.Sc. (Hons) Botany, University of the Punjab","2018"]];
+const certs=[["TAIRI Summer School: ML & AI Methods for Research, UT Dallas","2026"],["Google AI Fundamentals; AI for Research & Insights","2026"],["Spatial Machine Learning & Statistics in Python","2025"],["Geospatial Raster Data Analytics in Python","2025"],["Esri: ArcGIS Pro, Spatial Analysis, Data Management","2025"],["ACUE: Addressing Learning Integrity Concerns","2026"]];
+const li=a=>a.map(([x,y])=>`<li><span>${x}</span><span>${y}</span></li>`).join('');
+document.getElementById('edu').innerHTML=li(edu);document.getElementById('certs').innerHTML=li(certs);
+
+/* hero survey map */
+const s=document.getElementById('hero');let h='';
+const rnd=(a=>()=>(a=(a*16807)%2147483647)/2147483647)(7);
+const centers=[[140,150],[360,270],[300,90]];
+for(const [cx,cy] of centers)for(let k=1;k<=9;k++){let d='';for(let t=0;t<=64;t++){const a=t/64*Math.PI*2,r=k*19*(1+0.18*Math.sin(a*3+k)+0.08*Math.cos(a*5));d+=(t?'L':'M')+(cx+r*Math.cos(a)).toFixed(1)+' '+(cy+r*0.8*Math.sin(a)).toFixed(1)}h+=`<path d="${d}Z" fill="none" stroke="rgba(214,240,222,${0.10+k*0.012})" stroke-width="1"/>`}
+for(let x=0;x<=500;x+=50)h+=`<line x1="${x}" y1="0" x2="${x}" y2="410" stroke="rgba(255,255,255,.05)"/>`;
+for(let y=0;y<=410;y+=50)h+=`<line x1="0" y1="${y}" x2="500" y2="${y}" stroke="rgba(255,255,255,.05)"/>`;
+h+=`<path d="M-10 330 C 90 300, 160 360, 250 320 S 420 250, 520 280" fill="none" stroke="#7fd1ff" stroke-opacity=".55" stroke-width="5"/>`;
+for(let i=0;i<34;i++){const x=20+rnd()*460,y=20+rnd()*370;h+=`<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="3.4" fill="#c9f27a"/>`}
+for(let i=0;i<10;i++){const x=20+rnd()*460,y=20+rnd()*370;h+=`<rect x="${(x-3).toFixed(0)}" y="${(y-3).toFixed(0)}" width="6" height="6" fill="#7fd1ff"/>`}
+for(const [x,y] of [[352,262],[150,142],[305,96]])h+=`<circle cx="${x}" cy="${y}" r="16" fill="#ff6b4a" fill-opacity=".22"/><circle cx="${x}" cy="${y}" r="6" fill="#ff6b4a"/>`;
+h+=`<rect id="scan" x="0" y="0" width="70" height="410" fill="url(#g)"/><defs><linearGradient id="g"><stop offset="0" stop-color="#c9f27a" stop-opacity="0"/><stop offset="1" stop-color="#c9f27a" stop-opacity=".22"/></linearGradient></defs>`;
+s.innerHTML=h;
+const scan=document.getElementById('scan');
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let x=-70;const step=()=>{x=x>500?-70:x+1.2;scan.setAttribute('x',x);requestAnimationFrame(step)};requestAnimationFrame(step)}
+}
+</script>
+</body>
+</html>
